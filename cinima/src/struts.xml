@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "[url=http://struts.apache.org/dtds/struts-2.0.dtd]http://struts.apache.org/dtds/struts-2.0.dtd[/url]">
+<struts>
+	<constant name="struts.i18n.endcoding" value="GBK" />
+	<constant name="struts.locale" value="zh_CN"></constant>
+	<constant name="struts.multipart.maxSize" value="300000000"></constant>
+	<package name="default" extends="struts-default">
+		
+		<!--拦截器-->
+		<interceptors>
+            <!-- 定义权限控制拦截器 -->
+            <interceptor name="authority" class="util.AuthorizationInterceptor" />
+            <!-- 定义一个包含权限控制的拦截器栈 -->
+            <interceptor-stack name="mydefault">
+                <interceptor-ref name="defaultStack" />
+                <interceptor-ref name="authority" />
+            </interceptor-stack>
+        </interceptors>
+       
+        <!-- 定义默认拦截器 -->
+        <default-interceptor-ref name="mydefault" />
+		
+		<!-- 登陆 -->
+		<action name="login" class="loginBean" method="post">
+		<result name="loginSuccess">main.jsp</result>
+		<result name="loginFail">register.jsp</result>
+		</action>
+	</package>
+</struts>

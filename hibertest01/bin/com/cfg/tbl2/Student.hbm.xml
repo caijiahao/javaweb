@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 表和类之间的映射 -->
+    <class name="com.model2.Student" table="t_stu">
+        <!-- 主键映射 -->
+        <id name="id" column="id">
+            <generator class="assigned"></generator>
+        </id>
+        <!-- 属性映射 -->
+        <property name="name" column="name" length="30"/>
+        <property name="sex" column="sex"  length="2"/>
+        <property name="age" column="age" type="integer"/>
+        <property name="major" column="major" length="50"/>
+        
+        <!-- 表之间关系映射 -->
+        <set name="subjects"  table="t_subject_stu">
+            <key column="stu_id"></key>
+            <many-to-many class="com.model2.Subject" column="sjt_id"/>
+        </set>
+	</class>
+</hibernate-mapping>

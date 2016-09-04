@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class name="com.model.TUser" table="T_USER">
+        <id name="id" type="integer">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="age" type="integer">
+            <column name="age"  />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" not-null="true" />
+        </property>
+        <set name="userAddresses" table="USER_ADDRESS" >
+             <key foreign-key="id">
+                <column name="USERID"  not-null="true" />
+            </key>
+            <element type="string" column="address"></element>
+        </set>
+    </class>
+</hibernate-mapping>

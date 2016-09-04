@@ -1,0 +1,20 @@
+2016-05-01 20:29:58  [ main:0 ] - [ INFO ]  张三 开始执行    public abstract void com.gc.impl.LogicInterface.doInsert(java.lang.String) 方法
+2016-05-01 20:29:58  [ main:4 ] - [ INFO ]  张三 开始执行   public abstract void com.gc.impl.LogicInterface.doInsert(java.lang.String) 方法结束
+2016-05-01 20:29:58  [ main:5 ] - [ INFO ]  执行doInsert 方法共用了4毫秒
+2016-05-01 20:29:58  [ main:5 ] - [ INFO ]  李四 开始执行    public abstract void com.gc.impl.LogicInterface.doUpdate(java.lang.String) 方法
+2016-05-01 20:29:58  [ main:7 ] - [ INFO ]  李四 开始执行   public abstract void com.gc.impl.LogicInterface.doUpdate(java.lang.String) 方法结束
+2016-05-01 20:29:58  [ main:8 ] - [ INFO ]  执行doUpdate 方法共用了2毫秒
+2016-05-01 20:29:58  [ main:8 ] - [ INFO ]  王五 开始执行    public abstract void com.gc.impl.LogicInterface.doDelete(java.lang.String) 方法
+2016-05-01 20:29:58  [ main:8 ] - [ INFO ]  王五 开始执行   public abstract void com.gc.impl.LogicInterface.doDelete(java.lang.String) 方法结束
+2016-05-01 20:29:58  [ main:9 ] - [ INFO ]  执行doDelete 方法共用了0毫秒
+2016-05-01 20:29:58  [ main:9 ] - [ INFO ]  王五 执行doDelete 时有异常抛出java.lang.ArithmeticException: / by zero
+2016-05-01 20:30:29  [ main:1 ] - [ INFO ]  张三 开始执行    public abstract void com.gc.impl.LogicInterface.doInsert(java.lang.String) 方法
+2016-05-01 20:30:29  [ main:4 ] - [ INFO ]  张三 开始执行   public abstract void com.gc.impl.LogicInterface.doInsert(java.lang.String) 方法结束
+2016-05-01 20:30:29  [ main:4 ] - [ INFO ]  执行doInsert 方法共用了4毫秒
+2016-05-01 20:30:29  [ main:5 ] - [ INFO ]  李四 开始执行    public abstract void com.gc.impl.LogicInterface.doUpdate(java.lang.String) 方法
+2016-05-01 20:30:29  [ main:6 ] - [ INFO ]  李四 开始执行   public abstract void com.gc.impl.LogicInterface.doUpdate(java.lang.String) 方法结束
+2016-05-01 20:30:29  [ main:7 ] - [ INFO ]  执行doUpdate 方法共用了1毫秒
+2016-05-01 20:30:29  [ main:7 ] - [ INFO ]  王五 开始执行    public abstract void com.gc.impl.LogicInterface.doDelete(java.lang.String) 方法
+2016-05-01 20:30:29  [ main:7 ] - [ INFO ]  王五 开始执行   public abstract void com.gc.impl.LogicInterface.doDelete(java.lang.String) 方法结束
+2016-05-01 20:30:29  [ main:7 ] - [ INFO ]  执行doDelete 方法共用了0毫秒
+2016-05-01 20:30:29  [ main:8 ] - [ INFO ]  王五 执行doDelete 时有异常抛出java.lang.ArithmeticException: / by zero

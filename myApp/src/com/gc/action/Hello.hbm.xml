@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping>
+<class name="com.gc.action.Hello" table="hello" dynamic-update="false" dynamic-insert="false">
+<id name="id" column="id" type="java.lang.Integer"/>
+<property name="name" type="java.lang.String" update="true" insert="true" access="property" column="name" length="50"/>
+<property name="msg" type="java.lang.String" update="true" insert="true" access="property" column="msg" length="50"/>
+</class>
+</hibernate-mapping>

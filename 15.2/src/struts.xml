@@ -1,0 +1,14 @@
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <constant name="struts.devMode" value="true"/>                             <!-- 声明常量（开发模式） -->
+    <constant name="struts.configuration.xml.reload" value="true"/>            <!-- 声明常量（在Struts的配置文件修改后，自动加载) -->
+    <package name="myPackge" extends="struts-default">
+       <action name="testAction" class="com.lyq.action.TestAction">
+         <interceptor-ref name="timer"/>
+         <result>success.jsp</result>
+  </action>
+    </package>
+</struts>
+

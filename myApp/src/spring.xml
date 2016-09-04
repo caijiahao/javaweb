@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<property name="driverClassName">
+    <value>com.mysql.jdbc.Driver</value>
+</property>
+<property name="url">
+    <value>jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8</value>
+</property>
+<property name="name">
+   <value>root</value>
+</property>
+<property name="msg">
+<value>13713393809</value>
+</property>
+</bean>
+<bean id="sessionFactory" class="org.springframework.orm.hibernate.LocalSessionFactoryBean">
+   <property name="dataSource">
+      <ref local="dataSource"/>
+   </property>
+   <property name="mappingResources">
+      <list>
+         <value>com/gc/action/Hello.hbm.xml</value>
+      </list>
+   </property>
+   <property name="hibernateProperties">
+     <props>
+        <prop key="hibernate.dialect">
+          org.hibernate.dialect.MySQLDialect
+        </prop>
+        <prop key="hibernate.show_sql">
+           true
+        </prop>
+     </props>
+   </property>
+</bean>
+<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+   <property name="sessionFactory">
+      <ref bean="sessionFactory"/>
+   </property>
+</bean>
+
+<bean id="helloDAO" class="com.gc.action.HelloDAO">
+   <property name="sessionFactory">
+       <ref bean="sessionFactory"/>
+   </property>
+   <property name="transactionManager">
+      <ref bean="transactionManager"/>
+   </property>
+</bean>
+</beans>

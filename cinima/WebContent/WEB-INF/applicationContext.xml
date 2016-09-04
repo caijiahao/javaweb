@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver">
+		</property>
+		<property name="url" value="jdbc:sqlserver://localhost:1433;databaseName=ec">
+		</property>
+		<property name="username" value="wyq"></property>
+		<property name="password" value="wyq1234567"></property>
+		<property name="maxActive"><value>200</value></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
+				<prop key="hibernate.connection.release_mode">after_transaction</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				</props>
+		</property>
+
+		<property name="mappingResources">
+			<list>
+				<value>entity/Seer.hbm.xml</value>
+			</list>
+		</property>	
+	</bean>
+<!--拦截器--><!--
+	<bean id="AuthorizationInterceptor" class="util.AuthorizationInterceptor" ></bean>
+--><!--DAO-->	
+<bean id="SeerDAO" class="dao.SeerDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+</bean>
+<!-- SERVICE -->
+	<bean id="seerService" class="service.SeerService" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="seerDao">
+			<ref local="SeerDAO" />
+		</property>
+	</bean>
+	
+<!-- ACTION -->
+	
+	<bean id="loginBean" class="action.LoginAction" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="seerService">
+			<ref local="seerService" />
+		</property>
+	</bean>	
+</beans>

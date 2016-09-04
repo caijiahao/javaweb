@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean id="logic1" class="com.gc.action.Logic1"/>
+   <bean id="logic2" class="com.gc.action.Logic2"/>
+   <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+   <bean id="exceptionHandler" class="com.gc.action.ExceptionHandler"/>
+   <bean id="exceptionHandlereAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+   <property name="advice">
+       <ref bean="exceptionHandler"/>
+   </property>
+   <property name="patterns">
+       <value>.*.*</value>
+   </property>
+   </bean>
+   <bean id="timeHandler" class="com.gc.action.TimeHandler"/>
+   <bean id="timeHandlerAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+       <property name="advice">
+           <ref bean="timeHandler"/>
+       </property>
+       <property name="patterns">
+          <value>.*.*</value>
+       </property>
+   </bean>
+</beans>

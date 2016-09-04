@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<bean id="HelloWorld" class="com.gc.action.HelloWorld" depends-on="date">
+<property name="msg">
+    <value>HelloWorld</value>
+</property>
+<property name="date">
+   <ref bean="date"/>
+</property>
+</bean>
+<bean id="date" class="java.util.Date"/>
+
+<bean id="log" class="com.gc.action.LogAround"/>
+<bean id="timeBook" class="com.gc.action.TimeBook"/>
+<bean id="autoProxyCreator" class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+<bean id="logBefore" class="com.gc.action.LogBefore"/>
+  <bean id="logBeforeAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+     <property name="advice">
+     <ref bean="logBefore"/>
+     </property>
+     <property name="patterns">
+       <value>.*do.*</value>
+     </property>
+  </bean>
+  <bean id="logAfter" class="com.gc.action.LogAfter"/>
+  <bean id="logAfterAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+  <property name="advice">
+      <ref bean="logAfter"/>
+  </property>
+  <property name="patterns">
+    <value>.*do.*</value>
+  </property>
+  </bean>
+</beans>

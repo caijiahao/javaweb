@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName">
+    <bean id="Computer" class="com.pojo.Computer">
+        <property name="chassis" ref="chassis"/>  
+        <property name="keyboard" ref="keyboard"/>  
+        <property name="monitor" ref="monitor"/>   
+    </bean>
+    <bean id="chassis" class="com.pojo.impl.GoldenField"></bean>
+     <bean id="keyboard" class="com.pojo.impl.Rapoo"></bean>
+      <bean id="monitor" class="com.pojo.impl.BenQ"></bean>
+      
+      <bean id="Person" class="com.pojo.Person">
+      <constructor-arg index="0">
+      <value>蔡家豪</value>
+      </constructor-arg>
+       <constructor-arg index="1">
+      <value>21</value>
+      </constructor-arg>
+       <constructor-arg index="2">
+      <value>华南农业大学</value>
+      </constructor-arg>
+      </bean>
+</beans>

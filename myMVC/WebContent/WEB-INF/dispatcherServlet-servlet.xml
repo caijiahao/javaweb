@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean id="uriMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+      <property name="mappings">
+         <props>
+            <prop key="login.do">login</prop>
+         </props>
+      </property>
+  </bean>
+  <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <property name="viewClass">
+          <value>org.springframework.web.servlet.view.InternalResourceView</value>
+      </property>
+      <property name="prefix">
+         <value>/WebContent/jsp/</value>
+      </property>
+      <property name="suffix">
+         <value>.jsp</value>
+      </property>
+  </bean>
+  
+  <bean id="login" class="com.gc.action.Login">
+    <property name="commandClass">
+        <value>com.gc.action.User</value>
+    </property>
+    <property name="validator">
+       <ref bean="userValidator"/>
+    </property>
+    
+    <property name="formView">
+        <value>login</value>
+    </property>
+    
+    <property name="successView">
+        <value>success</value>
+    </property>
+  </bean>
+  <bean id="userValidator" class="com.gc.action.UserValidator"/>
+</beans>

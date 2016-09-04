@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	 <!-- 定义项目中使用的Service组件 -->
+    <bean id="uService" class="com.service.impl.UserService"/>
+    
+    <!-- 定义项目中使用的Dao组件 -->
+    <bean id="baseDao" class="com.dao.impl.BaseDao"/>
+</beans>
