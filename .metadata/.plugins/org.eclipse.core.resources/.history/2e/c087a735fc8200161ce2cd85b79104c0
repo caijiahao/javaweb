@@ -1,0 +1,99 @@
+package chuchujie.second;
+
+import java.util.Scanner;
+//不会做，图算法
+public class Main {
+
+  public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+      while (scanner.hasNext()) {
+          int n = scanner.nextInt();
+          int m = scanner.nextInt();
+          int[] dij = new int[n + 1], station = new int[n + 1], vis = new int[n + 1];
+          int[][] road = new int[n + 1][n + 1];
+
+          for (int i = 0; i <= n; i++) {
+              dij[i] = Integer.MAX_VALUE;
+          }
+          for (int i = 1; i <= n; i++) {
+              station[i] = scanner.nextInt();
+          }
+          for (int i = 0; i < m; i++) {
+              int p = scanner.nextInt();
+              int q = scanner.nextInt();
+              road[p][q] = 1;
+              road[q][p] = 1;
+          }
+          dij[1] = station[1];
+          vis[1] = 1;
+          int tmp_i = 1;
+          for (int i = 0; i < n - 1; i++) {
+              for (int j = 1; j <= n; j++) {
+                  if (vis[j] == 0 && road[tmp_i][j] == 1) {
+                      dij[j] = Math.min(dij[j], dij[tmp_i] + station[j]);
+                  }
+              }
+
+              int tmp_min = Integer.MAX_VALUE;
+              for (int j = 1; j <= n; j++) {
+                  if (vis[j] == 0 && dij[j] <= tmp_min) {
+                      tmp_i = j;
+                      tmp_min = dij[j];
+                  }
+              }
+
+              vis[tmp_i] = 1;
+          }
+          System.out.println(dij[n]);
+      }
+      scanner.close();
+  }
+
+}
+
+
+class Road{
+	private int start;
+	private int end;
+	private boolean isUsed;
+	private int daShanCount;
+	
+	public Road(int start, int end, boolean isUsed) {
+		super();
+		this.start = start;
+		this.end = end;
+		this.isUsed = isUsed;
+	}
+	public int getStart() {
+		return start;
+	}
+	public void setStart(int start) {
+		this.start = start;
+	}
+	public int getEnd() {
+		return end;
+	}
+	public void setEnd(int end) {
+		this.end = end;
+	}
+	public boolean isUsed() {
+		return isUsed;
+	}
+	public void setUsed(boolean isUsed) {
+		this.isUsed = isUsed;
+	}
+	public int getDaShanCount() {
+		return daShanCount;
+	}
+	public void setDaShanCount(int daShanCount) {
+		this.daShanCount = daShanCount;
+	}
+	public Road(int start, int end, boolean isUsed, int daShanCount) {
+		super();
+		this.start = start;
+		this.end = end;
+		this.isUsed = isUsed;
+		this.daShanCount = daShanCount;
+	}
+	
+}

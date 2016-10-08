@@ -1,0 +1,138 @@
+package chuchujie.second;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in =new Scanner(System.in);
+		while(in.hasNext()){
+			String s[] = in.nextLine().split(" ");
+			List<Road> start = new ArrayList<>();
+			List<Road> other = new ArrayList<>();
+			int n = Integer.parseInt(s[0]);
+			int m = Integer.parseInt(s[1]);
+			
+			s = in.nextLine().split(" ");
+			int[] daShanList = new int[n];
+			for(int i=0;i<n;i++){
+				daShanList[i]=Integer.parseInt(s[i]);
+			}
+			for(int i=0;i<m;i++){
+				s = in.nextLine().split(" ");
+				int start1 = Integer.parseInt(s[0]);
+				int end = Integer.parseInt(s[1]);
+				int temp ;
+				if(start1>end){
+					temp = start1;
+					start1 = end;
+					end = temp;
+				}
+				Road road = new Road(start1,end,false,daShanList[start1-1]+daShanList[end-1]);
+				//System.out.println(caclulateDaShan(start1,end,daShanList));
+				if(start1==1){
+					//System.out.println("start:"+road.getDaShanCount());
+					start.add(road);
+				}else{
+					//System.out.println("other:"+road.getDaShanCount());
+					other.add(road);
+				}
+			}
+			//System.out.println(road.getDaShanCount());
+			System.out.println(lessDaShan(start,other,daShanList,n));
+		}
+
+	}
+	public static int lessDaShan(List<Road> start,List<Road> other,int[] daShanList,int num){
+		
+		while(true){
+			int flag = 0;
+			int n = start.size();
+			for(int i=0;i<n;i++){
+				
+				if(start.get(i).isUsed()==false){
+					//System.out.println(start.get(i).getDaShanCount());
+				for(int j=0;j<other.size();j++){
+					if(other.get(j).isUsed()==false&&start.get(i).getEnd()==other.get(j).getStart()){
+						start.add(new Road(start.get(i).getStart(),other.get(j).getEnd(),false,start.get(i).getDaShanCount()+daShanList[other.get(j).getEnd()-1]));
+						start.get(i).setUsed(true);
+						other.get(j).setUsed(true);
+						flag = 1;
+					}
+				}
+				}
+			}
+			//System.out.println("======================");
+			if(flag==0){
+				break;
+			}
+			
+		}
+		int min = Integer.MAX_VALUE;
+		for(Road r :start ){
+			//System.out.println(r.getDaShanCount());
+			if(r.getEnd()==num&&r.getDaShanCount()<min){
+				min  = r.getDaShanCount();
+			}
+		}
+		return min;
+	}
+	
+	public static int caclulateDaShan(int newStart,int newEnd,int[] daShanList){
+		int source=0;
+		for(int i=newStart-1;i<newEnd;i++){
+			source+=daShanList[i];
+		}
+		return source;
+	}
+	
+
+}
+class Road{
+	private int start;
+	private int end;
+	private boolean isUsed;
+	private int daShanCount;
+	
+	public Road(int start, int end, boolean isUsed) {
+		super();
+		this.start = start;
+		this.end = end;
+		this.isUsed = isUsed;
+	}
+	public int getStart() {
+		return start;
+	}
+	public void setStart(int start) {
+		this.start = start;
+	}
+	public int getEnd() {
+		return end;
+	}
+	public void setEnd(int end) {
+		this.end = end;
+	}
+	public boolean isUsed() {
+		return isUsed;
+	}
+	public void setUsed(boolean isUsed) {
+		this.isUsed = isUsed;
+	}
+	public int getDaShanCount() {
+		return daShanCount;
+	}
+	public void setDaShanCount(int daShanCount) {
+		this.daShanCount = daShanCount;
+	}
+	public Road(int start, int end, boolean isUsed, int daShanCount) {
+		super();
+		this.start = start;
+		this.end = end;
+		this.isUsed = isUsed;
+		this.daShanCount = daShanCount;
+	}
+	
+}

@@ -1,0 +1,27 @@
+package jinritoutiao.first;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        Scanner in = new Scanner(System.in);
+        while(in.hasNext()){
+        	String str = in.nextLine();
+        	int n=0;
+        	int count = 0;
+        	while(true){
+        		if((str.substring(n)+str.substring(0, n)).equals(str)){
+        			count++;
+        		}
+        		n++;
+        		if(n==str.length()){
+        			break;
+        		}
+        	}
+        	System.out.println(count);
+        }
+	}
+
+}

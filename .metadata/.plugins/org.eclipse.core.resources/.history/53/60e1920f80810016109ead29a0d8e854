@@ -1,0 +1,33 @@
+package wangyi.second;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        Scanner in = new Scanner(System.in);
+        while(in.hasNext()){
+        	int n = Integer.parseInt(in.nextLine());
+        	int m = n+1;
+        	while(true){
+        		if(caclulateRight(m)==caclulateRight(n)){
+        			System.out.println(m);
+        			break;
+        		}
+        		m++;
+        	}
+        	
+        }
+	}
+    public static int caclulateRight(int num){
+    	int count=0;
+    	while(num>0){
+    		if(num%2==1){
+    			count++;
+    		}
+    		num/=2;
+    	}
+    	return count;
+    }
+}

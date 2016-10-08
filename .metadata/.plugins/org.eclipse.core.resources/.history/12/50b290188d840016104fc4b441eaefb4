@@ -1,0 +1,34 @@
+package chuchujie.five;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       Scanner in = new Scanner(System.in);
+       while(in.hasNext()){
+    	   int n = in.nextInt();
+    	   int m = in.nextInt();
+    	   int[]dij = new int[n+1],vis = new int[n + 1];
+    	   int[][] road = new int[n+1][n+1];
+    	   Arrays.fill(road, 0);
+    	   
+    	   for(int i=0;i<=n;i++){
+    		   dij[i] = Integer.MAX_VALUE;
+    	   }
+    	   
+    	   for(int i=0;i<m;i++){
+    		   int p = in.nextInt();
+    		   int q = in.nextInt();
+    		   int distance = in.nextInt();
+    		   road[p][q] = distance;
+    		   road[q][p] = distance;
+    	   }
+    	   dij[1] = 0;
+    	   vis[1] = 1;
+       }
+	}
+
+}

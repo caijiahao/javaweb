@@ -1,0 +1,49 @@
+package chuchujie.third;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        Scanner in = new Scanner(System.in);
+        while(in.hasNext()){
+        	int n = in.nextInt();
+        	int m = in.nextInt();
+        	int[] dij = new int[n+1],vis = new int[n + 1];
+        	int[][] road = new int[n+1][n+1];
+        	
+        	for (int i = 0; i <= n; i++) {
+                dij[i] = Integer.MAX_VALUE;
+            }
+        	for (int i = 0; i < m; i++) {
+                int p = in.nextInt();
+                int q = in.nextInt();
+                int time = in.nextInt()-in.nextInt()+in.nextInt();
+                road[p][q] = time;
+                road[q][p] = time;
+            }
+        	dij[1]=0;
+        	vis[1]=1;
+        	int temp_i = 1;
+        	for(int i=0;i<n-1;i++){
+        		for(int j=1;j<=n;j++){
+        			if(vis[j]==0&&road[temp_i][j]!=0){
+        				dij[j]=Math.min(dij[j], dij[temp_i]+road[temp_i][j]);
+        			}
+        		}
+        		
+        		int tmp_min = Integer.MAX_VALUE;
+        		for (int j = 1; j <= n; j++) {
+                    if (vis[j] == 0 && dij[j] <= tmp_min) {
+                    	temp_i = j;
+                        tmp_min = dij[j];
+                    }
+                }
+        		vis[temp_i] = 1;
+        	}
+        	System.out.println(dij[n]);
+        } 
+	}
+
+}
