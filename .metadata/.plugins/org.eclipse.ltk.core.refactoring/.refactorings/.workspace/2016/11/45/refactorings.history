@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete 2 resources" deleteContents="false" description="Delete 2 resources" element1="/pythonFirstTest/src/spider.py" element2="/pythonFirstTest/src/tool.py" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="2" stamp="1477979450409"/>
+<session version="1.0">&#x0A;<refactoring comment="Delete 2 resources" deleteContents="false" description="Delete 2 resources" element1="/pythonFirstTest/src/spider.py" element2="/pythonFirstTest/src/tool.py" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="2" stamp="1477979450409"/>&#x0A;<refactoring comment="Delete 4 resources" deleteContents="false" description="Delete 4 resources" element1="/pythonFirstTest/src/Advertising.csv" element2="/pythonFirstTest/src/doubleLinearRegression.py" element3="/pythonFirstTest/src/input_data.csv" element4="/pythonFirstTest/src/linearRegression.py" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="4" stamp="1478158341655"/>
 </session>
