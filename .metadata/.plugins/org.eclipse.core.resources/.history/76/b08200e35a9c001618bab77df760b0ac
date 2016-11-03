@@ -1,0 +1,45 @@
+package tanxin.number891;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+       String[] split = null;
+       while(input.hasNext()){
+    	   int count = Integer.parseInt(input.nextLine());
+    	   int[] start = new int[count];
+    	   int[] end = new int[count];
+    	   for(int i=0;i<count;i++){
+    		   split = input.nextLine().split(" ");
+    		   start[i] = Integer.parseInt(split[0]);
+    		   end[i] = Integer.parseInt(split[1]);
+    	   }
+    	   
+    	   //判断是否有重叠
+    	   int sum = 0;
+    	   for(int i=0;i<count;i++){
+    		   if(i==0){
+    			   sum++;
+    		   }else{
+    	    	   int j = 0;
+    			   for(;j<i;j++){
+    				   if((start[i]>=start[j]&&start[i]<=end[j])||(end[i]<=end[j]&&end[i]>=start[j])){
+    					   
+    					   continue;
+    				   }else{
+    					   break;
+    				   }
+    			   }
+    			   //不与前面的区间有交集，就添加一个点
+    			   if(j<i){
+    				   sum++;
+    			   }
+    		   }
+    	   }
+    	   System.out.println(sum);
+       }
+	}
+
+}

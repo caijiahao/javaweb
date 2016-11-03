@@ -1,0 +1,89 @@
+<%@page import="ChartDirector.*" %><%
+try
+{
+ out.clear();
+ GetSessionImage.getImage(request, response);
+ if (Math.max(1, 2) == 2) return;
+}
+catch (IllegalStateException e)
+{
+ response.sendRedirect(response.encodeRedirectURL(
+  "getchart.chart?" + request.getQueryString()));
+ return;
+}
+%>
+ 
+ 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+ pageEncoding="UTF-8" import="ChartDirector.*;"%>
+<%
+request.setCharacterEncoding("UTF-8");
+//以两个系列数据为例
+double[] data = {185, 156, 179.5, 211, 123};
+double[] data1 = {55, 76, 34.5, 88, 43};
+//数据列名
+String[] labels = {"一月", "二月", "三月", "四月", "五月"};
+//生成图片大小 250 x 250
+XYChart c = new XYChart(550, 350);
+Chart.setLicenseCode("ME7YWN3DBFQU2C7MB3971677");
+ 
+//图标题
+c.addTitle("第一个图","",15);
+//支持中文
+c.setDefaultFonts("SIMSUN.TTC","simhei.ttf");
+//图表在图片中的定位及区域大小
+c.setPlotArea(30, 40, 400, 250);
+//=========================
+//加入单个数据
+//BarLayer layer = c.addBarLayer(data,0xff3456,"我的测试");
+//=========================
+//加入多个BAR数据(多个datasets)
+BarLayer layer = c.addBarLayer2(Chart.Side, 3);
+layer.addDataSet(data, 0xff8080, "我测试1");
+layer.addDataSet(data1, 0x008080, "你也测2");
+//3d化
+layer.set3D();
+//设置BAR边框形式
+layer.setBarShape(0);
+//bar宽度
+layer.setBarWidth(50);
+//设置BAR边框颜色
+//layer.setBorderColor(0xff9999);
+//图例形式
+layer.setLegend(1);
+//每个BAR顶部加入数据显示
+layer.setAggregateLabelStyle();
+//设置BAR底部的名称显示
+TextBox t = c.xAxis().setLabels(labels);
+//名称文字大小
+t.setFontSize(9);
+//加图例
+//LegendBox legend = c.addLegend(260, 120,true);
+//legend.addKey("钱财",0xff8080);
+//图例位置
+c.addLegend(450, 120,true);
+ 
+//output the chart
+String chart1URL = c.makeSession(request, "chart1");
+//include tool tip for the chart
+String imageMap1 = c.getHTMLImageMap("#", "", "title='{xLabel}: US${value}K'");
+%><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>图表测试</title>
+</head>
+<body>
+<h1>中文</h1>
+<hr color="#000080">
+<br>
+<img src='<%=response.encodeURL("getchart.jsp?"+chart1URL)%>'
+    usemap="#map1" border="0">
+<map name="map1"><%=imageMap1%></map>
+ 
+<%
+out.println(chart1URL);
+out.println(response.encodeURL(chart1URL));
+%>
+</body>
+</html>

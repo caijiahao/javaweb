@@ -1,0 +1,34 @@
+import pandas as pd
+import seaborn as sns  
+import matplotlib.pyplot as plt
+from sklearn.cross_validation import train_test_split
+  
+data = pd.read_csv('Advertising.csv')
+print data
+
+# visualize the relationship between the features and the response using scatterplots  
+sns.pairplot(data, x_vars=['TV','Radio','Newspaper'], y_vars='Sales', size=7, aspect=0.8,kind='reg')  
+plt.show()
+
+#create a python list of feature names  
+feature_cols = ['TV', 'Radio', 'Newspaper']  
+# use the list to select a subset of the original DataFrame  
+X = data[feature_cols]  
+# equivalent command to do this in one line  
+X = data[['TV', 'Radio', 'Newspaper']]  
+# print the first 5 rows  
+print X.head()  
+# check the type and shape of X  
+print type(X)  
+print X.shape  
+
+# select a Series from the DataFrame  
+y = data['Sales']  
+# equivalent command that works if there are no spaces in the column name  
+y = data.Sales  
+# print the first 5 values  
+print y.head()  
+
+##构造训练集和测试集
+#这里是引用了交叉验证
+X_train,X_test, y_train, y_test = train_test_split(X, y, random_state=1) 
