@@ -2,48 +2,66 @@
 -- START DISKCACHE_2
 D:\eclipse\javaWeb项目代码\.metadata\.plugins\org.eclipse.core.resources\.projects\pythonFirstTest\com.python.pydev.analysis\v2_indexcache
 KNN.__init__|1478076457058474000|D:\eclipse\javaWeb项目代码\pythonFirstTest\src\KNN\__init__.py
-linearRegression|1478154487589362000|D:\eclipse\javaWeb项目代码\pythonFirstTest\src\linearRegression.py
 KNN.knn.__init__|1478076519443674000|D:\eclipse\javaWeb项目代码\pythonFirstTest\src\KNN\knn\__init__.py
 spider|1477981647134493000|D:\eclipse\javaWeb项目代码\pythonFirstTest\src\spider.py
 HelloWorld|1477971752234476000|D:\eclipse\javaWeb项目代码\pythonFirstTest\src\HelloWorld.py
 -- END DISKCACHE
 -- START DICTIONARY
-6
-2=linearRegression
-3=KNN.knn.__init__
-5=Spider
-4=spider
-6=Spider.__init__
+5
+2=KNN.knn.__init__
+4=Spider
+3=spider
+5=Spider.__init__
 1=HelloWorld
 -- END DICTIONARY
 -- START TREE 1
-19
+23
 X|0|
 ans|1|answer!11@
+cla|0|
 clf|1|clf!11@
 dat|1|data!11@
+err|0|
 f|1|f!11@
-fea|0|
-get|1|get_data!18@
-img|1|img2vector!26@
-knn|1|kNNClassify!26@
+fin|0|
+img|1|img2vector!18@
+iri|0|
+knn|1|kNNClassify!18@
 lab|1|labels!11@
-lin|1|linear_model_main!18@
-loa|1|loadDataSet!26@
-pre|1|predictvalue!19@
-res|1|result!19@
-spi|2|Spider!33@spider!35@
-tes|1|testHandWritingClass!26@
+loa|1|loadDataSet!18@
+nod|0|
+ran|0|
+row|0|
+spi|2|Spider!25@spider!27@
+tem|0|
+tes|1|testHandWritingClass!18@
 tok|1|tokens!11@
+tra|0|
 x|1|x!11@
 y|1|y!11@
 -- END TREE
 -- START TREE 2
-6
-__i|1|__init__!5&34@
-get|5|getPage!5&34@getAllImg!5&34@getDetailPage!5&34@getBrief!5&34@getContents!5&34@
-mkd|1|mkdir!5&34@
-sav|6|saveImg!5&34@saveBrief!5&34@savePageInfo!5&34@saveImgs!5&34@saveIcon!5&34@savePagesInfo!5&34@
-sit|1|siteURL!6&35@
-too|1|tool!6&35@
+22
+__i|1|__init__!4&26@
+bui|0|
+bul|0|
+col|0|
+div|0|
+fal|0|
+fit|0|
+gen|0|
+get|5|getPage!4&26@getAllImg!4&26@getDetailPage!4&26@getBrief!4&26@getContents!4&26@
+gin|0|
+lis|0|
+mkd|1|mkdir!4&26@
+n_b|0|
+pre|0|
+pri|0|
+res|0|
+sav|6|saveImg!4&26@saveBrief!4&26@savePageInfo!4&26@saveImgs!4&26@saveIcon!4&26@savePagesInfo!4&26@
+sit|1|siteURL!5&27@
+too|1|tool!5&27@
+tru|0|
+uni|0|
+val|0|
 -- END TREE

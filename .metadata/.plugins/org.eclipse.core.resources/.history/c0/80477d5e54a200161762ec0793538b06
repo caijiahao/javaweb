@@ -1,0 +1,19 @@
+from __future__ import division
+import numpy as np
+import math
+
+class node:
+    def __init__(self,col=-1,value=None,results=None,trueBranch=None,falseBranch=None):
+        self.col = col
+        self.value = value
+        self.results = results
+        self.trueBranch = trueBranch
+        self.falseBranch = falseBranch
+    
+    def getLabel(self):
+        if self.results = None:
+            return None
+        else:
+            max_counts = 0;
+            
+        
