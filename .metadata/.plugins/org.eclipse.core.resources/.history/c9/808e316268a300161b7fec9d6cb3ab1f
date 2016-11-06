@@ -1,0 +1,30 @@
+#################################################  
+# SVM: support vector machine  
+# Author : zouxy  
+# Date   : 2013-12-12  
+# HomePage : http://blog.csdn.net/zouxy09  
+# Email  : zouxy09@qq.com  
+#################################################  
+
+from numpy import *
+import time
+import matplotlib.pyplot as plt
+
+# calulate kernel value
+def calcKernelValue(matrix_x,sampe_x,kernelOption):
+   kernelType = kernelOption[0]
+   numSamples = matrix_x.shape[0]
+   kernelValue = mat(zeros((numSamples,1)))
+   
+   if kernelType == 'linear':
+       kernelValue = matrix_x * sampe_x.T
+   elif kernelType == 'rbf':
+       sigma = kernelOption[1]
+       if sigma == 0:
+           sigma = 1.0
+       for 
+   
+   
+   
+
+

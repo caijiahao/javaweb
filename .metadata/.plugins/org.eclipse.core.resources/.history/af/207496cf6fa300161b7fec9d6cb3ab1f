@@ -1,0 +1,40 @@
+#################################################  
+# SVM: support vector machine  
+# Author : zouxy  
+# Date   : 2013-12-12  
+# HomePage : http://blog.csdn.net/zouxy09  
+# Email  : zouxy09@qq.com  
+#################################################  
+
+# -*- coding: utf-8 -*-  
+from numpy import *
+import time
+import matplotlib.pyplot as plt
+
+# calulate kernel value
+def calcKernelValue(matrix_x,sampe_x,kernelOption):
+   kernelType = kernelOption[0]
+   numSamples = matrix_x.shape[0]
+   kernelValue = mat(zeros((numSamples,1)))
+   
+   if kernelType == 'linear':
+       kernelValue = matrix_x * sampe_x.T
+   elif kernelType == 'rbf':
+       sigma = kernelOption[1]
+       if sigma == 0:
+           sigma = 1.0
+       for i in xrange(numSamples):
+           diff = matrix_x[i,:] - sampe_x
+           #这里T的意思是转置矩阵
+           kernelValue[i] = exp(diff * diff.T / (-2.0 * sigma**2))
+   else:
+       raise NameError('Not support kernel type!You can use linear or rbf!')
+   return kernelValue
+# calculate kernel matrix given train set and kernel type 
+def calcKernelMatrix(train_x,kernelOption):
+    
+   
+   
+   
+
+

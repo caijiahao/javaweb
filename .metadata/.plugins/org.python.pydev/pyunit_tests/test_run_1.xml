@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pydev-testrun version="1.0"?><pydev-testsuite>
+<summary errors="1" failures="0" finished="true" name="Test Run: 1" tests="0" total_time="Finished in: 0.00 secs."/>
+<test location="D:\eclipse\javaWeb&amp;#39033;&amp;#30446;&amp;#20195;&amp;#30721;\pythonFirstTest\src\SVM\svm.py" status="error" test="svm" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "D:\eclipse\eclipse-jee-mars-2-win32-x86_64\eclipse\plugins\org.python.pydev_5.3.1.201610311318\pysrc\_pydev_runfiles\pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "D:/eclipse/javaWeb&#39033;&#30446;&#20195;&#30721;/pythonFirstTest/src/SVM\svm.py", line 267
+SyntaxError: Non-ASCII character '\xcf' in file D:/eclipse/javaWeb&#39033;&#30446;&#20195;&#30721;/pythonFirstTest/src/SVM\svm.py on line 267, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+ERROR: Module: svm could not be imported (file: D:\eclipse\javaWeb&#39033;&#30446;&#20195;&#30721;\pythonFirstTest\src\SVM\svm.py).
+]]></stderr>
+</test>
+<launch mode="run">
+<launch_memento><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration local="true" path="pythonFirstTest svm.py (1)"/>
+]]></launch_memento>
+</launch>
+</pydev-testsuite>
