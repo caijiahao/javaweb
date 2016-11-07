@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/HelloWorld.py=gbk
+encoding//src/NaiveBayesian/naiveBayesian.py=utf-8
 encoding//src/RandomForest/randomforestByPythonPlugin.py=utf-8
 encoding//src/RandomForest/randomforests.py=UTF-8
 encoding//src/spider.py=utf-8

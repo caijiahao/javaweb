@@ -15,48 +15,27 @@ HelloWorld|1477971752234476000|D:\eclipse\javaWebÏîÄ¿´úÂë\pythonFirstTest\src\He
 1=HelloWorld
 -- END DICTIONARY
 -- START TREE 1
-26
-C|0|
-acc|0|
+13
 ans|1|answer!11@
-cal|0|
 clf|1|clf!11@
 dat|1|data!11@
 f|1|f!11@
-fil|0|
 img|1|img2vector!18@
-inn|0|
 knn|1|kNNClassify!18@
 lab|1|labels!11@
-lin|0|
 loa|1|loadDataSet!18@
-max|0|
-sel|0|
-sho|0|
 spi|2|Spider!25@spider!27@
-svm|0|
 tes|1|testHandWritingClass!18@
 tok|1|tokens!11@
-tol|0|
-tra|0|
-upd|0|
 x|1|x!11@
 y|1|y!11@
 -- END TREE
 -- START TREE 2
-14
-C|0|
+6
 __i|1|__init__!4&26@
-alp|0|
-b|0|
-err|0|
 get|5|getPage!4&26@getAllImg!4&26@getDetailPage!4&26@getBrief!4&26@getContents!4&26@
-ker|0|
 mkd|1|mkdir!4&26@
-num|0|
 sav|6|saveImg!4&26@saveBrief!4&26@savePageInfo!4&26@saveImgs!4&26@saveIcon!4&26@savePagesInfo!4&26@
 sit|1|siteURL!5&27@
-tol|0|
 too|1|tool!5&27@
-tra|0|
 -- END TREE
