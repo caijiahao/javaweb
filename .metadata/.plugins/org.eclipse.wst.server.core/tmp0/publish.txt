@@ -1,2 +1,4 @@
 #Tomcat publish data
-#Wed Nov 02 13:02:16 CST 2016
+#Tue Nov 08 19:09:09 CST 2016
+org.eclipse.jst.jee.server\:wsn640=D\:\\apache-tomcat-8.0.12\\webapps\\wsn640
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\stevenfen\\git\\wsn640\\WebContent\\WEB-INF\\lib\\spring-web-3.2.3.RELEASE.jar=D\:\\apache-tomcat-8.0.12\\webapps\\wsn640\\WEB-INF\\lib\\spring-web-3.2.3.RELEASE.jar

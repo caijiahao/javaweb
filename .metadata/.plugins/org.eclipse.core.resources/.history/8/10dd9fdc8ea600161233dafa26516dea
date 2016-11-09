@@ -1,0 +1,28 @@
+#*************Apriori Algorithm*************
+# Zealseeker | www.zealseeker.com          
+#*******************************************
+#Input:
+#   dataDic, database of events as a dict
+#       -----------------
+#       |TID    ItemID  |
+#       |T100   I1,I2,I5|
+#       |...    ...     |
+#       -----------------
+#   min_sup, minimize support threshold
+#Output:
+#   UkLk, set of frequent(large) itemsets,
+#*******************************************
+
+import itertools
+
+class Apriori:
+    def __init__(self,min_sup=0.2,dataDic={}):
+        self.data = dataDic
+        self.size = len(dataDic)
+        self.min_sup = min_sup
+        self.min_sup_val = min_sup * self.size
+        
+    def find_frequent_1_itemsets(self):
+        FreqDic = {} #{itemset1:freq1,itemsets2:freq2}
+        for event in self.data:
+            

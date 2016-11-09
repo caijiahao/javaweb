@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* Author: wjas */
+/* date to build: 2011-09-29 */
+/* last Modified Author: wjas */
+/* last Modified: 2012-09-29 */
+
+.xtdl{color:#0095d8; font-size:38px; font-weight:bold; text-shadow:0 1px 0 rgba(255,255,255,1), 0 0 15px rgba(0,0,0,.15); font-family:"微软雅黑";}
+.login_int_box{width:440px; height:56px; margin:0 10px; display:inline; border:1px solid #c9c9c9; border-radius:4px; background:#fff; box-shadow: inset 0 1px 1px rgba(255,255,255,1), 0 0 15px rgba(0,0,0,.1); float:left; overflow:hidden; font-family:"微软雅黑";}
+.login_int_box .int_title,.login_int_box label{width:120px; height:56px; line-height:56px; float:left; text-align:right; font-size:18px; font-weight:bold; color:#999; text-shadow:0 1px 0 rgba(255,255,255,1); border-right:1px solid #ddd; box-shadow:inset 0 1px 0 0 rgba(255,255,255,1), 1px 0 0 rgb(255,255,255); background:#eee;}
+.login_int_box .login_int{width:295px; height:24px; padding:16px 10px; border:0; line-height:24px; float:left; text-align:left; font-size:16px; font-weight:bold; color:#666; background:none;box-shadow:inset 1px 0 0 rgba(255,255,255,1),inset 3px 0 2px rgba(0,0,0,.1);}
+.login_int_box input[type="text"]:focus, .login_int_box input[type="password"]:focus, .login_int_box textarea:focus {outline:none !important; -webkit-box-shadow:inset 1px 0 0 rgba(255,255,255,1),inset 3px 0 2px rgba(0,0,0,.1) !important; }
+.login_btn{width:400px; height:56px; padding:0; background:#fff;zoom:1;*display:inline; cursor:pointer; color:#fff; font-size:20px; line-height:48px; font-family:"微软雅黑"; text-shadow:0 1px 0 #fff, 0 2px 0 #333; border-radius:4px; border:1px solid #0095d8; border-color:#009de4 #0095d8 #0073a7; box-shadow: 0 2px 2px  rgba(0, 0, 0, .15), inset 0 1px 0 rgba(255, 255, 255, .5), 0 0 15px rgba(0,0,0,.3); background:#0095d8;}
+.login_btn:hover{
+border-color:#00b0ff #009fe6 #0081bb;
+background:#009fe6;
+background:-webkit-gradient(linear, left top, left bottom, from(#00a3ec),to(#0093d5));
+background:-moz-linear-gradient( top, #00a3ec, #0093d5);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00a3ec',endColorstr='#0093d5');}
+.login_btn:active{ position:relative; top:1px;
+-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .15), inset 0 2px 6px rgba(0, 0, 0, .3);
+-moz-box-shadow: 0 2px 2px  rgba(0, 0, 0, .15), inset 0 2px 6px rgba(0, 0, 0, .3);
+box-shadow: 0 2px 2px  rgba(0, 0, 0, .15), inset 0 2px 6px rgba(0, 0, 0, .3);}
+
+.login_convert{height:20px; padding:5px 15px; line-height:20px; font-size:14px; color:#fff; font-weight:bold; float:left;}
+.login_convert_txt{line-height:30px; font-size:16px; color:#999;}
+
+
+.table_new .talbe_area2{width:650px; border:1px solid #ccc; padding:10px 0; overflow:hidden; background:#fff; margin-bottom:30px; position:relative; box-shadow:0 0 20px rgba(0,0,0,.15); border-radius:4px; padding:10px 0 40px;}
+.table_new .talbe_area2 .bitian{ width:40px; background-color:#ffffff; height:30px; line-height:30px; position:absolute; z-index:1000; text-align:center; letter-spacing:1px; font-size:13px;}
+.table_new .talbe_area2 .detail {width:500px; margin:20px 50px; padding:10px 20px 30px 20px; border:1px dashed #dddddd; float:left; text-align:left; position:relative;}
+.table_new .talbe_area2 div{ float:left; width:100%; border:0; overflow:hidden; table-layout:fixed; word-wrap:break-word; font-size:14px; color:#333;}
+.table_new .talbe_area2 p {margin-top:15px; width:220px;}
+.table_new .talbe_area2 p span{float:left; width:100%; margin-top:2px; clear:both;}
+.table_new .talbe_area2 p strong{ font-size:14px; font-weight:bold; color:#666; float:left;}
+.table_new .talbe_area2 p .sp{text-align:left; margin-left:10px; color:Red; font-size:12px; display:none;}
+.table_new .talbe_area2 p input{float:left; color:#333;}
+.table_new .talbe_area2 p font{height:25px; line-height:25px; float:left; text-align:left; margin-left:10px; color:#666666; font-size:12px;}
+
+.table_new .talbe_area2 p input[type="text"]{width:200px; height:14px; line-height:14px; float:left; padding:6px; border:1px solid #bbb; text-align:left;}
+.table_new .talbe_area2 p input[type="password"]{width:200px; height:14px; line-height:14px; float:left; padding:6px; border:1px solid #bbb; text-align:left;}
+.table_new .talbe_area2 p select{width:210px; height:28px; float:left; padding:4px; border:1px solid #bbb; text-align:left;}
+.table_new .talbe_area2 p input[type="text"],.table_new .talbe_area2 p input[type="password"],.table_new .talbe_area2 p select,.table_new .talbe_area2 p textarea{ border-radius:3px;-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-webkit-transition: border 0.5s ease, box-shadow 0.5s ease;
+-moz-transition: border 0.5s ease, box-shadow 0.5s ease;
+-o-transition: border 0.5s ease, box-shadow 0.5s ease;
+transition: border 0.5s ease, box-shadow 0.5s ease;}
+.table_new .talbe_area2 p input[type="text"]:focus,.table_new .talbe_area2 p input[type="password"]:focus,.table_new .talbe_area2 p select:focus,.table_new .talbe_area2 p textarea:focus{ box-shadow:0 0 8px rgba(0, 153, 204, .5); border:1px solid #09c;}
+#provincecity label{ width:20px; height:30px; line-height:30px; text-align:right; float:left; font-weight:bold; color:#666; margin:12px 10px 0 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

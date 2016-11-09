@@ -1,0 +1,20 @@
+-- VERSION_4
+-- START DISKCACHE_2
+D:\eclipse\javaWeb项目代码\.metadata\.plugins\org.eclipse.core.resources\.projects\machineLearning\com.python.pydev.analysis\v2_indexcache
+KNN.__init__|1478076457058000000|D:\eclipse\Python代码\src\KNN\__init__.py
+KNN.knn.__init__|1478076519443000000|D:\eclipse\Python代码\src\KNN\knn\__init__.py
+-- END DISKCACHE
+-- START DICTIONARY
+1
+1=KNN.knn.__init__
+-- END DICTIONARY
+-- START TREE 1
+4
+img|1|img2vector!10@
+knn|1|kNNClassify!10@
+loa|1|loadDataSet!10@
+tes|1|testHandWritingClass!10@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE
